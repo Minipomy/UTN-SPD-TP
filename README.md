@@ -20,7 +20,7 @@ controlar la cuenta. Estos botones, incrementan, decrementan o resetean el conta
 **FUNCION:** ___Esta funcion se encarga de enceder los LEDs de un display.___\
 **USO:** ___Recorre una lista de Display de 7 segmentos en Multiplexación y por un delay, transiciona de una en otra.___\
 **VARIABLES:** ___number de tipo entero, es el valor que va a imprimir en los displays.___\
-**RETORNA:** ___None___\
+**RETORNA:** ___None___
 
 ~~~ C
 void showNumber(int number) {
