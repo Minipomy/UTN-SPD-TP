@@ -55,72 +55,72 @@ void showDigit(int digit) {
   displayClear();
    switch (digit) {
   	case 0:
-      digitalWrite(5, HIGH); 
-      digitalWrite(6, HIGH); 
-      digitalWrite(7, HIGH); 
-      digitalWrite(9, HIGH); 
-      digitalWrite(10, HIGH); 
-      digitalWrite(11, HIGH); 
+      digitalWrite(Diplay_A, HIGH); 
+      digitalWrite(Diplay_B, HIGH); 
+      digitalWrite(Diplay_C, HIGH); 
+      digitalWrite(Diplay_D, HIGH); 
+      digitalWrite(Diplay_E, HIGH); 
+      digitalWrite(Diplay_F, HIGH); 
       break;
   	case 1: 
-      digitalWrite(11, HIGH); 
-      digitalWrite(5, HIGH); 
+      digitalWrite(Diplay_A, HIGH); 
+      digitalWrite(Diplay_C, HIGH); 
     	break;
     case 2: 
-      digitalWrite(10, HIGH);
-    	digitalWrite(11, HIGH); 
-      digitalWrite(8, HIGH); 
-    	digitalWrite(7, HIGH); 
-    	digitalWrite(6, HIGH); 
+      digitalWrite(Diplay_A, HIGH);
+    	digitalWrite(Diplay_B, HIGH); 
+      digitalWrite(Diplay_G, HIGH); 
+    	digitalWrite(Diplay_E, HIGH); 
+    	digitalWrite(Diplay_D, HIGH); 
     	break;
     case 3: 
-      digitalWrite(10, HIGH);
-    	digitalWrite(11, HIGH); 
-      digitalWrite(8, HIGH); 
-    	digitalWrite(5, HIGH); 
-    	digitalWrite(6, HIGH); 
+      digitalWrite(Diplay_A, HIGH);
+    	digitalWrite(Diplay_B, HIGH); 
+      digitalWrite(Diplay_G, HIGH); 
+    	digitalWrite(Diplay_C, HIGH); 
+    	digitalWrite(Diplay_D, HIGH); 
     	break;
     case 4: 
-      digitalWrite(9, HIGH);
-    	digitalWrite(11, HIGH); 
-      digitalWrite(8, HIGH); 
-    	digitalWrite(5, HIGH); 
+      digitalWrite(Diplay_F, HIGH);
+    	digitalWrite(Diplay_G, HIGH); 
+      digitalWrite(Diplay_B, HIGH); 
+    	digitalWrite(Diplay_C, HIGH); 
     	break;
     case 5: 
-      digitalWrite(10, HIGH);
-    	digitalWrite(9, HIGH); 
-      digitalWrite(8, HIGH); 
-    	digitalWrite(5, HIGH);
-    	digitalWrite(6, HIGH);
+      digitalWrite(Diplay_A, HIGH);
+    	digitalWrite(Diplay_F, HIGH); 
+      digitalWrite(Diplay_G, HIGH); 
+    	digitalWrite(Diplay_C, HIGH);
+    	digitalWrite(Diplay_D, HIGH);
     	break;
     case 6: 
-      digitalWrite(10, HIGH);
-    	digitalWrite(9, HIGH); 
-      digitalWrite(8, HIGH); 
-    	digitalWrite(5, HIGH);
-    	digitalWrite(7, HIGH);
-    	digitalWrite(6, HIGH);
+      digitalWrite(Diplay_A, HIGH);
+    	digitalWrite(Diplay_F, HIGH); 
+      digitalWrite(Diplay_G, HIGH); 
+    	digitalWrite(Diplay_C, HIGH);
+    	digitalWrite(Diplay_E, HIGH);
+    	digitalWrite(Diplay_D, HIGH);
     	break;
     case 7: 
-      digitalWrite(10, HIGH);
-    	digitalWrite(11, HIGH); 
-    	digitalWrite(5, HIGH);
+      digitalWrite(Diplay_A, HIGH);
+    	digitalWrite(Diplay_B, HIGH); 
+    	digitalWrite(Diplay_C, HIGH);
     	break;
     case 8: 
-      digitalWrite(10, HIGH); 
-      digitalWrite(11, HIGH); 
-      digitalWrite(5, HIGH); 
-      digitalWrite(6, HIGH); 
-      digitalWrite(7, HIGH); 
-      digitalWrite(9, HIGH);    	
-      digitalWrite(8, HIGH);
+      digitalWrite(Diplay_A, HIGH); 
+      digitalWrite(Diplay_B, HIGH); 
+      digitalWrite(Diplay_C, HIGH); 
+      digitalWrite(Diplay_D, HIGH); 
+      digitalWrite(Diplay_E, HIGH); 
+      digitalWrite(Diplay_F, HIGH);    	
+      digitalWrite(Diplay_G, HIGH);
     	break;
     case 9: 
-      digitalWrite(10, HIGH); 
-      digitalWrite(11, HIGH); 
-      digitalWrite(5, HIGH);  
-      digitalWrite(9, HIGH);
-    	digitalWrite(8, HIGH);
+      digitalWrite(Diplay_A, HIGH); 
+      digitalWrite(Diplay_B, HIGH); 
+      digitalWrite(Diplay_C, HIGH);  
+      digitalWrite(Diplay_F, HIGH);
+    	digitalWrite(Diplay_G, HIGH);
     	break;
   	default:
     	// statements
@@ -129,11 +129,11 @@ void showDigit(int digit) {
 }
   
 void displayClear(){
-  digitalWrite(5, LOW); 
-	digitalWrite(6, LOW); 
-	digitalWrite(7, LOW); 
-	digitalWrite(8, LOW); 
-	digitalWrite(9, LOW); 
-	digitalWrite(10, LOW); 
-	digitalWrite(11, LOW); 
+  digitalWrite(Diplay_A, LOW); 
+	digitalWrite(Diplay_B, LOW); 
+	digitalWrite(Diplay_C, LOW); 
+	digitalWrite(Diplay_D, LOW); 
+	digitalWrite(Diplay_E, LOW); 
+	digitalWrite(Diplay_F, LOW); 
+	digitalWrite(Diplay_G, LOW); 
 }
