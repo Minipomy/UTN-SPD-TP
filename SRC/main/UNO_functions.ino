@@ -63,7 +63,7 @@ void showDigit(int digit) {
       digitalWrite(Diplay_F, HIGH); 
       break;
   	case 1: 
-      digitalWrite(Diplay_A, HIGH); 
+      digitalWrite(Diplay_B, HIGH); 
       digitalWrite(Diplay_C, HIGH); 
     	break;
     case 2: 
