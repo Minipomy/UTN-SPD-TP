@@ -23,7 +23,7 @@ void showNumber(int number) {
    for (int i = 0; i < 2; i++) {
      digitalWrite(displayPins[i], HIGH);
      showDigit(digits[i]);
-     delay(12);
+     delay(50);
      digitalWrite(displayPins[i], LOW);
    }
 }
