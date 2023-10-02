@@ -1,4 +1,4 @@
-# Arduino Multiplexor
+# Arduino Multiplexación
 ![Tinkercad](./IMG/ArduinoTinkercad.jpg)
 
 
@@ -8,7 +8,7 @@
 - Irina Rivas Ramirez
 
 
-## Proyecto: Contador binario.
+## Proyecto: Display 7 Segmentos y Multiplexación.
 ![Tinkercad](./IMG/Arduino-multiplexor.png)
 
 
