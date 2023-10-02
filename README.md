@@ -13,19 +13,30 @@
 
 
 ## Descripción
-En este parrafo deberan describir que funcion cumple su proyecto. Que solucion esta ofreciendo.
+Diseña un contador de 0 a 99 utilizando dos displays de 7 segmentos y tres botones para
+controlar la cuenta. Estos botones, incrementan, decrementan o resetean el contador.
 
 ## Función principal
-Esta funcion se encarga de encender y apagar los leds.
+**FUNCION:** ___Esta funcion se encarga de enceder los LEDs de un display.___
+**USO:** ___Recorre una lista de Display de 7 segmentos en Multiplexación y por un delay, transiciona de una en otra.___
+**VARIABLES:** ___number de tipo entero, es el valor que va a imprimir en los displays.___
+**RETORNA:** ___None___
 
 ~~~ C
-void main()
-{
+void showNumber(int number) {
+   int digits[2] = {number / 10, number % 10};
+   
+   for (int i = 0; i < 2; i++) {
+     digitalWrite(displayPins[i], HIGH);
+     showDigit(digits[i]);
+     delay(50);
+     digitalWrite(displayPins[i], LOW);
+   }
 }
 ~~~
 
 ## :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/6XI9OxBgVjY)
+- [Proyecto: Tinkercad](https://www.tinkercad.com/things/6XI9OxBgVjY)
 
 
 
