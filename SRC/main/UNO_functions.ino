@@ -27,6 +27,7 @@ void showNumber(int number) {
      digitalWrite(displayPins[i], LOW);
    }
 }
+
 void buttonsActions(){
   // Leer el estado de los botones
   if (digitalRead(buttonPins[0]) == LOW) {
@@ -35,18 +36,18 @@ void buttonsActions(){
     if (counter > 99) {
       counter = 0;
     }
-    delay(200); // Debounce
+    delay(200);
   } else if (digitalRead(buttonPins[1]) == LOW) {
     // Si el segundo botón está presionado, decrementar el contador
     counter--;
     if (counter < 0) {
       counter = 99;
     }
-    delay(200); // Debounce
+    delay(200);
   } else if (digitalRead(buttonPins[2]) == LOW) {
     // Si el tercer botón está presionado, resetear el contador a cero
     counter = 0;
-    delay(200); // Debounce
+    delay(200);
   }
 }
 
@@ -54,72 +55,72 @@ void showDigit(int digit) {
   displayClear();
    switch (digit) {
   	case 0:
-      digitalWrite(5, 1); 
-      digitalWrite(6, 1); 
-      digitalWrite(7, 1); 
-      digitalWrite(9, 1); 
-      digitalWrite(10, 1); 
-      digitalWrite(11, 1); 
+      digitalWrite(5, HIGH); 
+      digitalWrite(6, HIGH); 
+      digitalWrite(7, HIGH); 
+      digitalWrite(9, HIGH); 
+      digitalWrite(10, HIGH); 
+      digitalWrite(11, HIGH); 
       break;
   	case 1: 
-      	digitalWrite(11, 1); 
-      	digitalWrite(5, 1); 
+      digitalWrite(11, HIGH); 
+      digitalWrite(5, HIGH); 
     	break;
     case 2: 
-      	digitalWrite(10, 1);
-    	digitalWrite(11, 1); 
-      	digitalWrite(8, 1); 
-    	digitalWrite(7, 1); 
-    	digitalWrite(6, 1); 
+      digitalWrite(10, HIGH);
+    	digitalWrite(11, HIGH); 
+      digitalWrite(8, HIGH); 
+    	digitalWrite(7, HIGH); 
+    	digitalWrite(6, HIGH); 
     	break;
     case 3: 
-      	digitalWrite(10, 1);
-    	digitalWrite(11, 1); 
-      	digitalWrite(8, 1); 
-    	digitalWrite(5, 1); 
-    	digitalWrite(6, 1); 
+      digitalWrite(10, HIGH);
+    	digitalWrite(11, HIGH); 
+      digitalWrite(8, HIGH); 
+    	digitalWrite(5, HIGH); 
+    	digitalWrite(6, HIGH); 
     	break;
     case 4: 
-      	digitalWrite(9, 1);
-    	digitalWrite(11, 1); 
-      	digitalWrite(8, 1); 
-    	digitalWrite(5, 1); 
+      digitalWrite(9, HIGH);
+    	digitalWrite(11, HIGH); 
+      digitalWrite(8, HIGH); 
+    	digitalWrite(5, HIGH); 
     	break;
     case 5: 
-      	digitalWrite(10, 1);
-    	digitalWrite(9, 1); 
-      	digitalWrite(8, 1); 
-    	digitalWrite(5, 1);
-    	digitalWrite(6, 1);
+      digitalWrite(10, HIGH);
+    	digitalWrite(9, HIGH); 
+      digitalWrite(8, HIGH); 
+    	digitalWrite(5, HIGH);
+    	digitalWrite(6, HIGH);
     	break;
     case 6: 
-      	digitalWrite(10, 1);
-    	digitalWrite(9, 1); 
-      	digitalWrite(8, 1); 
-    	digitalWrite(5, 1);
-    	digitalWrite(7, 1);
-    	digitalWrite(6, 1);
+      digitalWrite(10, HIGH);
+    	digitalWrite(9, HIGH); 
+      digitalWrite(8, HIGH); 
+    	digitalWrite(5, HIGH);
+    	digitalWrite(7, HIGH);
+    	digitalWrite(6, HIGH);
     	break;
     case 7: 
-      	digitalWrite(10, 1);
-    	digitalWrite(11, 1); 
-    	digitalWrite(5, 1);
+      digitalWrite(10, HIGH);
+    	digitalWrite(11, HIGH); 
+    	digitalWrite(5, HIGH);
     	break;
     case 8: 
-      	digitalWrite(10, 1); 
-      	digitalWrite(11, 1); 
-      	digitalWrite(5, 1); 
-      	digitalWrite(6, 1); 
-      	digitalWrite(7, 1); 
-      	digitalWrite(9, 1);    	
-        digitalWrite(8, 1);
+      digitalWrite(10, HIGH); 
+      digitalWrite(11, HIGH); 
+      digitalWrite(5, HIGH); 
+      digitalWrite(6, HIGH); 
+      digitalWrite(7, HIGH); 
+      digitalWrite(9, HIGH);    	
+      digitalWrite(8, HIGH);
     	break;
     case 9: 
-      	digitalWrite(10, 1); 
-      	digitalWrite(11, 1); 
-      	digitalWrite(5, 1);  
-      	digitalWrite(9, 1);
-    	digitalWrite(8, 1);
+      digitalWrite(10, HIGH); 
+      digitalWrite(11, HIGH); 
+      digitalWrite(5, HIGH);  
+      digitalWrite(9, HIGH);
+    	digitalWrite(8, HIGH);
     	break;
   	default:
     	// statements
@@ -128,11 +129,11 @@ void showDigit(int digit) {
 }
   
 void displayClear(){
-  	digitalWrite(5, 0); 
-	digitalWrite(6, 0); 
-	digitalWrite(7, 0); 
-	digitalWrite(8, 0); 
-	digitalWrite(9, 0); 
-	digitalWrite(10, 0); 
-	digitalWrite(11, 0); 
+  digitalWrite(5, LOW); 
+	digitalWrite(6, LOW); 
+	digitalWrite(7, LOW); 
+	digitalWrite(8, LOW); 
+	digitalWrite(9, LOW); 
+	digitalWrite(10, LOW); 
+	digitalWrite(11, LOW); 
 }
