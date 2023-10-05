@@ -1,23 +1,24 @@
-void IOS_config(){
+void IOS_config(){  // Son los pines de los segmentos salidas.
   for (int i = 0; i < 7; i++) {
     pinMode(segmentPins[i], OUTPUT);
   }
 }
 
-void DISPLAYS_config(){
+void DISPLAYS_config(){ // Son los pines de los displays como salidas.
   for (int i = 0; i < 2; i++) {
     pinMode(displayPins[i], OUTPUT);
     digitalWrite(displayPins[i], LOW);
   }
 }
 
-void BUTTONS_config(){
+void BUTTONS_config(){ // Son los pines de los botones como esntrada.
     for (int i = 0; i < 3; i++) {
     pinMode(buttonPins[i], INPUT_PULLUP);
   }
 }
 
 void showNumber(int number) {
+  //Recorre una lista de 7 segmentos en Multiplexacion y por un delay.
    int digits[2] = {number / 10, number % 10};
    
    for (int i = 0; i < 2; i++) {
@@ -54,6 +55,7 @@ void buttonsActions(){
 void showDigit(int digit) {
   displayClear();
    switch (digit) {
+    // Enciende conjunto LED correspondiente al numero. 
   	case 0:
       digitalWrite(Diplay_A, HIGH); 
       digitalWrite(Diplay_B, HIGH); 
@@ -123,12 +125,12 @@ void showDigit(int digit) {
     	digitalWrite(Diplay_G, HIGH);
     	break;
   	default:
-    	// statements
+    	// Finaliza el display
     	break;
    }
 }
   
-void displayClear(){
+void displayClear(){ // Limpia el display.
   digitalWrite(Diplay_A, LOW); 
 	digitalWrite(Diplay_B, LOW); 
 	digitalWrite(Diplay_C, LOW); 
