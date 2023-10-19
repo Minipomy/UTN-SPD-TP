@@ -1,55 +1,55 @@
-void IOS_config(){  // Son los pines de los segmentos salidas.
+void IOS_config(){
+  // Son los pines de los segmentos salidas.
   for (int i = 0; i < 7; i++) {
     pinMode(segmentPins[i], OUTPUT);
   }
 }
 
-void DISPLAYS_config(){ // Son los pines de los displays como salidas.
+void DISPLAYS_config(){
+  // Son los pines de los displays como salidas.
   for (int i = 0; i < 2; i++) {
     pinMode(displayPins[i], OUTPUT);
     digitalWrite(displayPins[i], LOW);
   }
 }
 
-void BUTTONS_config(){ // Son los pines de los botones como esntrada.
-    for (int i = 0; i < 3; i++) {
-    pinMode(buttonPins[i], INPUT_PULLUP);
+void SENSOR_config() {
+  // Son el pin del sensor como salidas.
+  for (int i = 0; i < 1; i++) {
+    pinMode(sensorsPins[i],OUTPUT);
   }
+}
+
+int calcularCentigrados() {
+  // Calcula y devuelvle la temperatura en centigrados
+  int sensor_valor = analogRead(sensorsPins[0]);
+  float potencia = 5.0 / 1024 * sensor_valor; // potencia
+  float temperatura = potencia * 100 - 50;
+  return(temperatura);
 }
 
 void showNumber(int number) {
-  //Recorre una lista de 7 segmentos en Multiplexacion y por un delay.
-   int digits[2] = {number / 10, number % 10};
-   
-   for (int i = 0; i < 2; i++) {
-     digitalWrite(displayPins[i], HIGH);
-     showDigit(digits[i]);
-     delay(50);
-     digitalWrite(displayPins[i], LOW);
-   }
+  // Recorre una lista de 7 segmentos en Multiplexacion y por un delay.
+  if(bajoZero(number) == true){
+    number *= -1;
+  	digitalWrite(ledPins[0], HIGH);
+  }
+  else {digitalWrite(ledPins[0], LOW);}
+  if(number > 99){number = 99;}
+  int digits[2] = {number / 10, number % 10};
+  for (int i = 0; i < 2; i++) {
+    digitalWrite(displayPins[i], HIGH);
+    showDigit(digits[i]);
+    delay(50);
+    digitalWrite(displayPins[i], LOW);
+  }
 }
 
-void buttonsActions(){
-  // Leer el estado de los botones
-  if (digitalRead(buttonPins[0]) == LOW) {
-    // Si el primer botón está presionado, incrementar el contador
-    counter++;
-    if (counter > 99) {
-      counter = 0;
-    }
-    delay(200);
-  } else if (digitalRead(buttonPins[1]) == LOW) {
-    // Si el segundo botón está presionado, decrementar el contador
-    counter--;
-    if (counter < 0) {
-      counter = 99;
-    }
-    delay(200);
-  } else if (digitalRead(buttonPins[2]) == LOW) {
-    // Si el tercer botón está presionado, resetear el contador a cero
-    counter = 0;
-    delay(200);
+bool bajoZero(int temperatura) {
+  if(temperatura < 0){
+  	return true;
   }
+  return false;
 }
 
 void showDigit(int digit) {
