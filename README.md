@@ -80,6 +80,13 @@ Diseña un contador de 0 a 99 utilizando dos displays de 7 segmentos con 1 senso
 
 ## Sensor TMP36
 **CONFIGURACION DE PINES:** ___Conectar el pin izquierdo a una entrada de (2.7-5.5V), el pin del medio a un analogico(ADC) pueden ser en un rango A0~A5 en el arduino UNO (R3) y el ultimo pin a Ground.___\
+**APLICACIONES:**
+___Environmental control systems
+Thermal protection
+Industrial process control
+Fire alarms
+Power system monitors
+CPU thermal management___\
 **FORMULA:** 
 ~~~ C
 //Voltaje en el pin representado en mV = (ADC) * (5000/1024)
