@@ -159,11 +159,11 @@ int calcularCentigrados() {
 }
 ~~~
 
-**CONECCIONES:** ___El motor va conectado al Transistor (NPN), el cual tiene 3 pines:___\
+**CONECCIONES:** ___El motor va conectado al Transistor (PNP), el cual tiene 3 pines:___
 - Emisor: ___Terminal_1 del motor DC___
-- Base: ___PIN~3 PWM~  Pulsle Width Modulation, tecnica que nos permite tener resultados analogicos sobre entradas digitales.___
+- Base: ___PIN3 PWM-  Pulsle Width Modulation, tecnica que nos permite tener resultados analogicos sobre entradas digitales.___
 - Colector: ___Ground___
-**FUNCION:**___la funcion _motorControl(temperatura)_ provoca el encendido del motor DC en un rango de 600rpm~=15 <= 1800rpm >= 60 = 8000rpm___\
+**FUNCION:**___la funcion _motorControl(temperatura)_ provoca el encendido del motor DC en un rango de 600rpm~=15 <= 1800rpm >= 60 = 8000rpm.___
 
 ~~~ C
 void motorControl(float temperatura) {
