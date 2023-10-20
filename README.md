@@ -92,6 +92,8 @@ Diseña un contador de 0 a 99 utilizando dos displays de 7 segmentos con 1 senso
   // obtengo la temperatura final aproximada
   float temperatura = potencia * 100 - 50; 
 ~~~
+![Tinkercad](./IMG/TMP36_SENSOR.png)
+
 
 ## Función principal
 **FUNCION:** ___Esta funcion se encarga de mostrar la temperatura ambiente, en displays de 7 segmentos y en un led que adicional que marca las temperaturas bajo cero.___\
