@@ -93,13 +93,16 @@ Diseña un contador de 0 a 99 utilizando dos displays de 7 segmentos con 1 senso
 ~~~ C
 //Voltaje en el pin representado en mV = (ADC) * (5000/1024)
 //Esta formula convierte el numero entre 0~1023 del ADC en 0-5000mV = 5V
-
+int calcularCentigrados() {
   // en un rango de 0V a 5V en un pin Analogico(ADC), tiene de 0~1023 posibles valores
   int sensor_valor = analogRead(sensorsPins[0]);
   // obtengo la potencia
-  float potencia = 5.0 / 1024 * sensor_valor; 
+  //float potencia = 5.0 / 1024 * sensor_valor; 
   // obtengo la temperatura final aproximada
-  float temperatura = potencia * 100 - 50; 
+  //float temperatura = potencia * 100 - 50;
+  float temperatura = map(sensor_valor, 20, 358, -40, 125);
+  return(temperatura);
+}
 ~~~
 ![Tinkercad](./IMG/TMP36_SENSOR.png)
 

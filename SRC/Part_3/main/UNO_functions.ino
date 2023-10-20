@@ -21,10 +21,10 @@ void SENSOR_config() {
 }
 
 int calcularCentigrados() {
-  // Calcula y devuelvle la temperatura en centigrados
-  int sensor_valor = analogRead(sensorsPins[0]);
-  float potencia = 5.0 / 1024 * sensor_valor; // potencia
-  float temperatura = potencia * 100 - 50;
+  int sensor_valor = analogRead(sensorsPins[0]); // Probando con un potenciador los pines analogicos toman de 0 a 1023 valores
+  //float potencia = 5.0 / 1024 * sensor_valor; // potencia
+  //float temperatura = potencia * 100 - 50;
+  float temperatura = map(sensor_valor, 20, 358, -40, 125);
   return(temperatura);
 }
 
