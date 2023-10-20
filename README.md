@@ -71,7 +71,7 @@ void showNumber(int number) {
 - [Proyecto: Tinkercad Parte 2](https://www.tinkercad.com/things/iZndEi24wGq)
 
 
-## Proyecto: Switchs y botones (PARTE 3).
+## Proyecto: Sensor de temperatura (PARTE 3).
 ![Tinkercad](./IMG/Arduino_TMP36_SENSOR.png)
 
 
