@@ -12,6 +12,7 @@ int segmentPins[] = {Diplay_A, Diplay_B, Diplay_C, Diplay_D, Diplay_E, Diplay_F,
 int displayPins[] = {A4, A5};
 int sensorsPins[] = {0};
 int ledPins[] = {12};
+int motorPins[] = {3};
 
 void setup() {
   // Configura los pines de los segmentos salidas
@@ -20,15 +21,19 @@ void setup() {
   DISPLAYS_config();
   // Configura el pin del sensor como salidas
   SENSOR_config();
-
+  // Configura el pin del motor como salidas
+  MOTOR_config();
+  
   // Testing purpose
-  //Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop() {
   // Muestra el valor del contador en los displays
   showNumber(calcularCentigrados());
+  motorControl(calcularCentigrados());
   
   // Testing purpose
-  //Serial.println(calcularCentigrados());
+  //digitalWrite(motorPins[0], 0);
+  //delay(200);
 }
