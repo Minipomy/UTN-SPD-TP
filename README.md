@@ -78,8 +78,23 @@ void showNumber(int number) {
 ## Descripción
 Diseña un contador de 0 a 99 utilizando dos displays de 7 segmentos con 1 sensor TMP36 para saber la temperatura ambiente.
 
+## Sensor TMP36
+**CONFIGURACION DE PINES:** ___Conectar el pin izquierdo a una entrada de (2.7-5.5V), el pin del medio a un analogico(ADC) pueden ser en un rango A0~A5 en el arduino UNO (R3) y el ultimo pin a Ground.___\
+**FORMULA:** 
+~~~ C
+//Voltaje en el pin representado en mV = (ADC) * (5000/1024)
+//Esta formula convierte el numero entre 0~1023 del ADC en 0-5000mV = 5V
+
+  // en un rango de 0V a 5V en un pin Analogico(ADC), tiene de 0~1023 posibles valores
+  int sensor_valor = analogRead(sensorsPins[0]);
+  // obtengo la potencia
+  float potencia = 5.0 / 1024 * sensor_valor; 
+  // obtengo la temperatura final aproximada
+  float temperatura = potencia * 100 - 50; 
+~~~
+
 ## Función principal
-**FUNCION:** ___Esta funcion se encarga de enceder los LEDs de un display.___\
+**FUNCION:** ___Esta funcion se encarga de mostrar la temperatura ambiente, en displays de 7 segmentos y en un led que adicional que marca las temperaturas bajo cero.___\
 **USO:** ___Recorre una lista de Display de 7 segmentos en Multiplexación y por un delay, transiciona de una en otra.___\
 **VARIABLES:** ___number de tipo entero, es el valor que va a imprimir en los displays.___\
 **RETORNA:** ___None___
@@ -89,7 +104,7 @@ void showNumber(int number) {
   // Recorre una lista de 7 segmentos en Multiplexacion y por un delay.
   if(bajoZero(number) == true){
     number *= -1;
-  	digitalWrite(ledPins[0], HIGH);
+    digitalWrite(ledPins[0], HIGH);
   }
   else {digitalWrite(ledPins[0], LOW);}
   if(number > 99){number = 99;}
