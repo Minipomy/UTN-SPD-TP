@@ -159,3 +159,28 @@ void motorControl(float temperatura) {
 
 ## :robot: Link al proyecto
 - [Proyecto: Tinkercad Parte 3](https://www.tinkercad.com/things/fkK2GnB0yXb)
+
+### Fotoresistor (ADICIONAL PARCIAL - PARTE 4)
+**APLICACIONES:**
+- Alarma que se activa por la luz.
+- Sensor de Día/Noche.
+
+**REQUIERE:** ___Resistor de 10kohms.___
+**CONECCIONES:** ___El fotoresistor presenta 2 pines:___
+- Terminal_1: ___Terminal_1, se conecta a 5V___
+- Terminal_2: ___Terminal_2, se conecta a una resistencia, y la resitencia va a Ground y un pin Analogico.___
+
+**FUNCION:** ___La funcion _PHOTOconfig()_ configura el/los pines de la variable photoPins (tipo lista) como salidas.___
+
+~~~ C
+void PHOTO_config() {
+  for(int i = 0; i < 1; i++) {
+  	pinMode(photoPins[i], OUTPUT);
+  }
+}
+~~~
+
+![Tinkercad](./IMG/fotoresistencia.png)
+
+## :robot: Link al proyecto
+- [Proyecto: Tinkercad Parte 3](https://www.tinkercad.com/things/jbNCkqRWQp4)
