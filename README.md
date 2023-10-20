@@ -183,4 +183,4 @@ void PHOTO_config() {
 ![Tinkercad](./IMG/fotoresistencia.png)
 
 ## :robot: Link al proyecto
-- [Proyecto: Tinkercad Parte 3](https://www.tinkercad.com/things/jbNCkqRWQp4)
+- [Proyecto: Tinkercad Parte 4](https://www.tinkercad.com/things/jbNCkqRWQp4)
